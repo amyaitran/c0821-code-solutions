@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML Web Page</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    td:not(:first-child) {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jelly of the Month Club</h1>
+  <h3>Make all your friends jelly of your stock of jelly!</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos consequuntur, obcaecati veniam ab magnam quis consectetur dignissimos itaque voluptatibus exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ad eos, mollitia velit non, odio veniam labore, ab cupiditate quam deleniti omnis id facilis placeat sit nam voluptatem odit voluptatibus.</p>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Basic Plan</th>
+        <th>Deluxe Plan</th>
+        <th>Jelly Giant Plan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Three new curated jellies per month</td>
+        <td>&check;</td>
+        <td>&check;</td>
+        <td>&check;</td>
+      </tr>
+      <tr>
+        <td>Monthly jellies come with commemorative mason jars</td>
+        <td></td>
+        <td>&check;</td>
+        <td>&check;</td>
+      </tr>
+      <tr>
+        <td>Free bonus jar of preserves bi-monthly</td>
+        <td></td>
+        <td>&check;</td>
+        <td>&check;</td>
+      </tr>
+      <tr>
+        <td>Free yearly tickets to Jelly Con</td>
+        <td></td>
+        <td></td>
+        <td>&check;</td>
+      </tr>
+      <tr>
+        <td>Monthly Pricing</td>
+        <td>$30</td>
+        <td>$50</td>
+        <td>$60</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Like what you see? Become a part of the JOTMC family today!</p>
+  <form>
+    <input type="text" placeholder="Your Name" maxlength="20">
+    <select name="plan">
+      <option value="">Select Your Plan:</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <input type="submit" name="submit" value="Submit">
+  </form>
+</body>
+</html>
