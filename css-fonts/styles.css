@@ -1,0 +1,12 @@
+h1 {
+  font-family: 'Kaisei Decol', serif;
+}
+
+h2,
+p {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+body {
+  line-height: 30px;
+}
