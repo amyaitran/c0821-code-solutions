@@ -1,0 +1,49 @@
+.center {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Brandon Grotesque';
+  color: orangered;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+p {
+  font-family: 'Brandon Grotesque';
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin: 22px 0 0 12px;
+  text-align: left;
+}
+
+.fields {
+  height: 40px;
+  width: 500px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: darkgray;
+  border-style: solid;
+}
+
+.button {
+  color: white;
+  background-color: rgb(236, 93, 87);
+  border-radius: 20px;
+  padding: 5px 20px;
+  border: none;
+  text-align: right;
+  margin-top: 12px;
+  font-size: 0.8rem;
+}
+
+.fields::placeholder {
+  padding-left: 8px;
+}
+
+/* input.button {
+  border-radius: 20px;
+  padding: 5px 20px;
+} */
