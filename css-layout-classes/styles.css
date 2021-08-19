@@ -11,8 +11,6 @@ img {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  align-items: center;
-  align-content: space-between;
 }
 
 .row {
@@ -25,4 +23,8 @@ img {
 
 .col-one-third {
   flex-basis: calc(100% / 3);
+}
+
+.col-two-thirds {
+  flex-basis: calc(200% / 3);
 }
