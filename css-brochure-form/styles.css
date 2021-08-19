@@ -1,6 +1,6 @@
 .center {
   margin: auto;
-  width: 100%;
+  width: 60%;
   text-align: center;
 }
 
@@ -15,15 +15,18 @@ p {
   font-family: 'Brandon Grotesque', sans-serif;
   font-weight: 500;
   font-size: 0.8rem;
-
-  /* margin: 22px 0 0 12px; */
-  margin: 22px 0 0 10%;
+  margin: 0 0 0 12px;
+  width: 100%;
   text-align: left;
+}
+
+.padding {
+  margin: 20px 0 0 0;
 }
 
 .fields {
   height: 40px;
-  width: 60%;
+  width: 100%;
   border-radius: 6px;
   border-width: 1px;
   border-color: darkgray;
@@ -34,18 +37,13 @@ p {
   color: white;
   background-color: rgb(236, 93, 87);
   border-radius: 20px;
-  padding: 5px 20px;
+  padding: 8px 20px;
   border: none;
-  text-align: right;
-  margin-top: 12px;
   font-size: 0.8rem;
+  margin: 10px 0 0 0;
+  float: right;
 }
 
 .fields::placeholder {
   padding-left: 8px;
 }
-
-/* input.button {
-  border-radius: 20px;
-  padding: 5px 20px;
-} */
