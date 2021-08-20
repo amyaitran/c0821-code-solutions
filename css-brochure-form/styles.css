@@ -1,0 +1,49 @@
+.center {
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Brandon Grotesque', sans-serif;
+  color: orangered;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+p {
+  font-family: 'Brandon Grotesque', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin: 0 0 0 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.margin {
+  margin: 20px 0 0 0;
+}
+
+.fields {
+  height: 40px;
+  width: 100%;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: darkgray;
+  border-style: solid;
+}
+
+.button {
+  color: white;
+  background-color: rgb(236, 93, 87);
+  border-radius: 20px;
+  padding: 8px 20px;
+  border: none;
+  font-size: 0.8rem;
+  margin: 10px 0 0 0;
+  float: right;
+}
+
+.fields::placeholder {
+  padding-left: 8px;
+}
