@@ -1,0 +1,63 @@
+body {
+  background-color: rgb(25, 150, 218);
+  color: white;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+
+img {
+  height: 54px;
+  width: 54px;
+  text-align: center;
+}
+
+h2,
+h3,
+p {
+  line-height: 22px;
+}
+
+h2,
+h3 {
+  font-weight: 350;
+}
+
+p {
+  font-weight: 250;
+  font-size: 0.9rem;
+}
+
+.row {
+  display: flex;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.margin {
+  margin: 20px 30px;
+}
+
+.col-one-third {
+  width: calc(100% / 3);
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  margin-left: 6px;
+}
+
+.icon {
+  margin-left: 60px;
+  display: flex;
+}
