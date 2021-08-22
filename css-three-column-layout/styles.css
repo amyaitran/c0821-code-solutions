@@ -8,7 +8,6 @@ body {
 img {
   height: 54px;
   width: 54px;
-  text-align: center;
 }
 
 h2,
@@ -52,12 +51,9 @@ p {
   width: 100px;
   background-color: white;
   border-radius: 50%;
-  position: absolute;
-  z-index: -1;
-  margin-left: 6px;
 }
 
 .icon {
-  margin-left: 60px;
+  justify-content: center;
   display: flex;
 }
