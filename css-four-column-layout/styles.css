@@ -1,0 +1,51 @@
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: rgb(247, 248, 250);
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 16pt;
+}
+
+p {
+  font-size: 10pt;
+}
+
+.phone-img {
+  width: 90%;
+}
+
+.icon {
+  width: 25%;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.row {
+  display: flex;
+}
+
+.col-one-fourth {
+  width: 25%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.center {
+  margin: 0 auto;
+  display: flex;
+}
+
+.text-align {
+  text-align: center;
+}
