@@ -12,6 +12,11 @@ hr {
   height: 1px;
 }
 
+img {
+  height: 480px;
+  filter: brightness(0.8);
+}
+
 .nav a {
   color: rgb(160, 160, 160);
   text-decoration: none;
@@ -20,8 +25,8 @@ hr {
   position: relative;
 }
 
-.hero-box h1,
-.hero-box p {
+.hero-paragraph h1,
+.hero-paragraph p {
   color: white;
 }
 
@@ -63,19 +68,20 @@ hr {
 
 .hero-paragraph p {
   line-height: 24px;
+  position: absolute;
 }
 
 .hero-img {
   height: 80%;
   width: 80%;
+}
+
+.absolute {
   position: absolute;
 }
 
-.hero-box {
-  background-image: url("images/hero.jpg");
-  filter: brightness(0.8);
-  background-size: cover;
-  height: 480px;
+.relative {
+  position: relative;
 }
 
 .container {
@@ -168,6 +174,10 @@ hr {
   display: flex;
 }
 
+.width-62 {
+  width: 62%;
+}
+
 .mt-80 {
   margin-top: 80px;
 }
@@ -182,6 +192,14 @@ hr {
 
 .mb-50 {
   margin-bottom: 50px;
+}
+
+.mt {
+  margin-top: 360px;
+}
+
+.mt-0 {
+  margin-top: 0;
 }
 
 .mt-50 {
