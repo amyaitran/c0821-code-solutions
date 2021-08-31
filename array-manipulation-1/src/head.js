@@ -1,13 +1,7 @@
 /* exported head */
 
-// look at each element of the array.
-// if it's the first element of the array,
-// then return that element
+// return the first element of the array
 
 function head(array) {
-  for (var i = 0; i < array.length; i++) {
-    if (i === 0) {
-      return array[i];
-    }
-  }
+  return array[0];
 }
