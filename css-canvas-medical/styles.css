@@ -1,0 +1,211 @@
+body {
+  font-family: 'Avenir', sans-serif;
+}
+
+h1 {
+  font-family: 'Tiempos Headline', serif;
+}
+
+hr {
+  background-color: lightgray;
+  border: none;
+  height: 1px;
+}
+
+img {
+  height: 480px;
+  filter: brightness(0.8);
+}
+
+.nav a {
+  color: rgb(160, 160, 160);
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.hero-paragraph h1,
+.hero-paragraph p {
+  color: white;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+  margin-left: 50px;
+  align-items: center;
+  display: flex;
+}
+
+.bg-dg p {
+  line-height: 20px;
+}
+
+.bt-contact-us {
+  color: white;
+  background-color: rgb(41, 68, 100);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.bt-get-started {
+  color: white;
+  background-color: rgb(41, 68, 100);
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 158px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.gray-font {
+  color: rgb(110, 110, 110);
+}
+
+.hero-paragraph p {
+  line-height: 24px;
+  position: absolute;
+}
+
+.hero-img {
+  height: 80%;
+  width: 80%;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.bg-dg {
+  background-color: rgb(82, 83, 81);
+  height: 400px;
+  color: white;
+}
+
+.logo {
+  height: 30px;
+}
+
+.col-one-fourth {
+  width: 25%;
+}
+
+.inline {
+  display: inline;
+}
+
+.justify-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 50px 20px 50px;
+}
+
+.nav {
+  text-align: right;
+  flex-grow: 1;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-half {
+  flex-basis: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+.hero-paragraph {
+  width: 50%;
+}
+
+.lg-bg {
+  background-color: rgb(250, 250, 250);
+}
+
+.clinician-container {
+  height: 420px;
+}
+
+.clinician-container p {
+  line-height: 28px;
+}
+
+.footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+.margin-50 {
+  margin: 50px;
+}
+
+.flex {
+  display: flex;
+}
+
+.width-62 {
+  width: 62%;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.ml-50 {
+  margin-left: 50px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mt {
+  margin-top: 360px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
