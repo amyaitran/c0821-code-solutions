@@ -21,7 +21,7 @@ $button.addEventListener('click', handleClick);
 var buttonOn = false;
 
 function handleClick(event) {
-  if (buttonOn === true) {
+  if (buttonOn) {
     buttonOn = false;
     $button.className = 'bt-light';
     $background.className = 'bg-light';
