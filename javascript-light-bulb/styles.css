@@ -1,0 +1,28 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 300px auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  border: none;
+}
+
+.bt-dark {
+  background-color: rgb(37, 37, 37);
+  box-shadow: 0 -19px 0 8px rgba(0, 0, 0, 0.75);
+}
+
+.bt-light {
+  background-color: rgb(250, 234, 132);
+  box-shadow: 0 0 46px -3px rgba(250, 234, 132, 0.75);
+}
+
+.bg-dark {
+  background-color: black;
+}
+
+.bg-light {
+  background-color: rgb(254, 249, 241);
+}
