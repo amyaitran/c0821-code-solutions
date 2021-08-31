@@ -21,13 +21,13 @@ $button.addEventListener('click', handleClick);
 var buttonOn = false;
 
 function handleClick(event) {
-  if (buttonOn === false) {
-    buttonOn = true;
-    $button.className = 'bt-dark';
-    $background.className = 'bg-dark';
-  } else if (buttonOn === true) {
+  if (buttonOn === true) {
     buttonOn = false;
     $button.className = 'bt-light';
     $background.className = 'bg-light';
+  } else {
+    buttonOn = true;
+    $button.className = 'bt-dark';
+    $background.className = 'bg-dark';
   }
 }
