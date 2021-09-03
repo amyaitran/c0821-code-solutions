@@ -6,14 +6,14 @@ var currentChar = 0;
 
 function logKey(event) {
   if (event.key === $characters[currentChar].textContent) {
-    $characters[currentChar + 1].className = 'margin green black-underline';
-    $characters[currentChar].className = 'margin green';
+    $characters[currentChar + 1].className = 'green black-underline';
+    $characters[currentChar].className = 'green';
     currentChar++;
-  } else if (event.code === 'Space' && $characters[currentChar].getAttribute('space') === 'true') {
-    $characters[currentChar + 1].className = 'margin green black-underline';
-    $characters[currentChar].className = 'margin space green';
+  } else if (event.code === 'Space' && $characters[currentChar].textContent === ' ') {
+    $characters[currentChar + 1].className = 'green black-underline';
+    $characters[currentChar].className = 'green';
     currentChar++;
   } else if (event.key !== $characters[currentChar].textContent) {
-    $characters[currentChar].className = 'margin red red-underline';
+    $characters[currentChar].className = 'red red-underline';
   }
 }
