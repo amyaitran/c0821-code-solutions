@@ -24,10 +24,10 @@ var arrJSON = JSON.stringify(arr);
 console.log('arrJSON:', arrJSON);
 console.log('typeof arrJSON:', typeof arrJSON);
 
-var String = JSON.stringify({ 'Number id': 12, 'String name': 'toad' });
-console.log('String:', String);
-console.log('typeof String:', typeof String);
+var studentJSON = '{"id":12,"name":"toad"}';
+console.log('studentJSON:', studentJSON);
+console.log('typeof studentJSON:', typeof studentJSON);
 
-var Object = JSON.parse(String);
-console.log('Object:', Object);
-console.log('typeof Object:', typeof Object);
+var student = JSON.parse(studentJSON);
+console.log('student:', student);
+console.log('typeof student:', typeof student);
