@@ -9,10 +9,6 @@ function logKey(event) {
     $characters[currentChar + 1].className = 'green black-underline';
     $characters[currentChar].className = 'green';
     currentChar++;
-  } else if (event.code === 'Space' && $characters[currentChar].textContent === ' ') {
-    $characters[currentChar + 1].className = 'green black-underline';
-    $characters[currentChar].className = 'green';
-    currentChar++;
   } else if (event.key !== $characters[currentChar].textContent) {
     $characters[currentChar].className = 'red red-underline';
   }
