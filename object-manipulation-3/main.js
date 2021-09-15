@@ -80,53 +80,80 @@ function generatePlayers(number) {
 function playCards(players, numberCards) {
   var cardSuits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
   var cardRanks = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
-  var randomCard = ((cardRanks[Math.floor(Math.random() * 13)]) + ' of ' + cardSuits[Math.floor(Math.random() * 4)]);
 
-  function shuffle() {
-    randomCard = ((cardRanks[Math.floor(Math.random() * 13)]) + ' of ' + cardSuits[Math.floor(Math.random() * 4)]);
-  }
-
-  var dealtCards = [];
-  for (var x = 0; x < numberCards; x++) {
-    for (var y = 0; y < players.length; y++) {
-      while (dealtCards.indexOf(randomCard) > -1) {
-        shuffle();
-      }
-      players[y].hand.push(randomCard);
-      dealtCards.push(randomCard);
-      players[y].score += generateScore(randomCard);
+  var cardDeck = [];
+  for (var i = 0; i < cardSuits.length; i++) {
+    for (var j = 0; j < cardRanks.length; j++) {
+      cardDeck.push({
+        suit: cardSuits[i],
+        rank: cardRanks[j]
+      });
     }
   }
 
+  function shuffle(deck) {
+    var shuffledDeck = [];
+    var randomCard = [];
+    for (var i = 0; i < deck.length; i++) {
+      randomCard = deck[Math.floor(Math.random() * deck.length)];
+      while (shuffledDeck.indexOf(randomCard) > -1) {
+        randomCard = deck[Math.floor(Math.random() * deck.length)];
+      }
+      shuffledDeck.push(randomCard);
+      randomCard = [];
+    }
+    return shuffledDeck;
+  }
+
+  console.log('shuffled cardDeck', shuffle(cardDeck));
+
+  console.log('cardDeck:', cardDeck);
+  // var randomCard = ((cardRanks[Math.floor(Math.random() * 13)]) + ' of ' + cardSuits[Math.floor(Math.random() * 4)]);
+  // function shuffle() {
+  //   randomCard = ((cardRanks[Math.floor(Math.random() * 13)]) + ' of ' + cardSuits[Math.floor(Math.random() * 4)]);
+  // }
+  var shuffledDeck = shuffle(cardDeck);
+
+  for (var x = 0; x < numberCards; x++) {
+    for (var y = 0; y < players.length; y++) {
+      players[y].hand.push(shuffledDeck[x]);
+      players[y].score += generateScore(shuffledDeck[x].rank);
+    }
+  }
+  console.log('shuf[x]', shuffledDeck[3].rank);
+  console.log('gen-score shuf[x]', generateScore(shuffledDeck[3].rank));
+
   function generateScore(card) {
-    if (card[0] === '2') {
+    if (card === '2') {
       return 2;
-    } else if (card[0] === '3') {
+    } else if (card === '3') {
       return 3;
-    } else if (card[0] === '4') {
+    } else if (card === '4') {
       return 4;
-    } else if (card[0] === '5') {
+    } else if (card === '5') {
       return 5;
-    } else if (card[0] === '6') {
+    } else if (card === '6') {
       return 6;
-    } else if (card[0] === '7') {
+    } else if (card === '7') {
       return 7;
-    } else if (card[0] === '8') {
+    } else if (card === '8') {
       return 8;
-    } else if (card[0] === '9') {
+    } else if (card === '9') {
       return 9;
-    } else if (card[0] === '1') {
+    } else if (card === '10') {
       return 10;
-    } else if (card[0] === 'J') {
+    } else if (card === 'Jack') {
       return 10;
-    } else if (card[0] === 'Q') {
+    } else if (card === 'Queen') {
       return 10;
-    } else if (card[0] === 'K') {
+    } else if (card === 'King') {
       return 10;
-    } else if (card[0] === 'A') {
+    } else if (card === 'Ace') {
       return 11;
     }
   }
+
+  console.log('players', players);
 
   var highScore = 0;
   for (var p = 0; p < players.length; p++) {
