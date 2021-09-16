@@ -105,55 +105,29 @@ function playCards(players, numberCards) {
     return shuffledDeck;
   }
 
-  console.log('shuffled cardDeck', shuffle(cardDeck));
-
-  console.log('cardDeck:', cardDeck);
-  // var randomCard = ((cardRanks[Math.floor(Math.random() * 13)]) + ' of ' + cardSuits[Math.floor(Math.random() * 4)]);
-  // function shuffle() {
-  //   randomCard = ((cardRanks[Math.floor(Math.random() * 13)]) + ' of ' + cardSuits[Math.floor(Math.random() * 4)]);
-  // }
   var shuffledDeck = shuffle(cardDeck);
 
+  var currentCard = 0;
   for (var x = 0; x < numberCards; x++) {
     for (var y = 0; y < players.length; y++) {
-      players[y].hand.push(shuffledDeck[x]);
-      players[y].score += generateScore(shuffledDeck[x].rank);
+      players[y].hand.push(shuffledDeck[currentCard]);
+      players[y].score += generateScore(shuffledDeck[currentCard].rank);
+      currentCard++;
     }
   }
-  console.log('shuf[x]', shuffledDeck[3].rank);
-  console.log('gen-score shuf[x]', generateScore(shuffledDeck[3].rank));
 
   function generateScore(card) {
-    if (card === '2') {
-      return 2;
-    } else if (card === '3') {
-      return 3;
-    } else if (card === '4') {
-      return 4;
-    } else if (card === '5') {
-      return 5;
-    } else if (card === '6') {
-      return 6;
-    } else if (card === '7') {
-      return 7;
-    } else if (card === '8') {
-      return 8;
-    } else if (card === '9') {
-      return 9;
-    } else if (card === '10') {
-      return 10;
-    } else if (card === 'Jack') {
-      return 10;
-    } else if (card === 'Queen') {
-      return 10;
-    } else if (card === 'King') {
+    if (Number.isInteger(card)) {
+      return card;
+    } else if (
+      card === 'Jack' ||
+      card === 'Queen' ||
+      card === 'King') {
       return 10;
     } else if (card === 'Ace') {
       return 11;
     }
   }
-
-  console.log('players', players);
 
   var highScore = 0;
   for (var p = 0; p < players.length; p++) {
