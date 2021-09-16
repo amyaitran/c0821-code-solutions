@@ -117,15 +117,15 @@ function playCards(players, numberCards) {
   }
 
   function generateScore(card) {
-    if (Number.isInteger(card)) {
-      return card;
+    if (card === 'Ace') {
+      return 11;
     } else if (
       card === 'Jack' ||
       card === 'Queen' ||
       card === 'King') {
       return 10;
-    } else if (card === 'Ace') {
-      return 11;
+    } else {
+      return card;
     }
   }
 
