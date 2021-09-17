@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="box margin-top-6">
+      <div class="row center">
+        <div class="col-tenth">
+          <i id="left" class="fas fa-chevron-left center"></i>
+        </div>
+        <div class="col-four-fifths">
+          <img src="images/001.png" class="center" data-view="1">
+          <img src="images/004.png" class="center hidden" data-view="2">
+          <img src="images/007.png" class="center hidden" data-view="3">
+          <img src="images/025.png" class="center hidden" data-view="4">
+          <img src="images/039.png" class="center hidden" data-view="5">
+        </div>
+        <div class="col-tenth">
+          <i id="right" class="fas fa-chevron-right center"></i>
+        </div>
+      </div>
+      <div class="row center">
+        <div id="circlesContainer" class="flex margin-top-2">
+          <div data-view="1" class="black circle"></div>
+          <div data-view="2" class="circle"></div>
+          <div data-view="3" class="circle"></div>
+          <div data-view="4" class="circle"></div>
+          <div data-view="5" class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
