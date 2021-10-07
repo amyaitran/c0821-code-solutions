@@ -31,3 +31,13 @@ if (process.argv[2] === 'update') {
     }
   });
 }
+
+// delete 1
+if (process.argv[2] === 'delete') {
+  for (const keys in JSONdata) {
+    console.log(JSONdata[keys]);
+    if (JSONdata[keys] === process.argv[3]) {
+      delete JSONdata.keys;
+    }
+  }
+}
