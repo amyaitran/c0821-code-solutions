@@ -14,8 +14,8 @@ app.use(middleware, function (req, res, next) {
   next();
 });
 
-const arr = [];
 app.get('/api/grades', function (req, res) {
+  const arr = [];
   for (const keys in grades) {
     arr.push(grades[keys]);
   }
@@ -23,9 +23,8 @@ app.get('/api/grades', function (req, res) {
 });
 
 app.post('/api/grades', function (req, res) {
-  const newInput = req.body;
-  newInput.id = nextId;
+  req.body.id = nextId;
+  res.status(201).send(req.body);
+  grades[nextId] = req.body;
   nextId++;
-  res.status(201).send(newInput);
-  arr.push(newInput);
 });
