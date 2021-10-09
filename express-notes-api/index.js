@@ -19,7 +19,7 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/api/notes/:id', (req, res) => {
-  if (typeof req.param.id !== 'number' || req.params.id < 0) {
+  if (req.params.id < 0) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (!data.notes[req.params.id]) {
     res.status(404).json({ error: `cannot find note with id ${req.params.id}` });
@@ -42,7 +42,7 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-  if (typeof req.param.id !== 'number' || req.param.id < 0) {
+  if (req.param.id < 0) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (!data.notes[req.params.id]) {
     res.status(404).json({ error: `cannot find note with id ${req.params.id}` });
@@ -55,7 +55,7 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.put('/api/notes/:id', (req, res) => {
-  if (typeof req.param.id !== 'number' || req.param.id < 0) {
+  if (req.param.id < 0) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (!req.body) {
     res.status(400).json({ error: 'content is a required field' });
