@@ -40,9 +40,10 @@ app.post('/api/notes', (req, res) => {
     fs.writeFile('data.json', stringifyData, err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
+      } else {
+        res.status(201).send(req.body);
       }
     });
-    res.status(201).send(req.body);
   }
 });
 
@@ -57,9 +58,11 @@ app.delete('/api/notes/:id', (req, res) => {
     fs.writeFile('data.json', stringifyData, err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
+      } else {
+        res.sendStatus(204);
       }
     });
-    res.sendStatus(204);
+
   }
 });
 
@@ -77,9 +80,10 @@ app.put('/api/notes/:id', (req, res) => {
     fs.writeFile('data.json', stringifyData, err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
+      } else {
+        res.status(200).json(data.notes[req.params.id]);
       }
     });
-    res.status(200).json(data.notes[req.params.id]);
   }
 })
 ;
