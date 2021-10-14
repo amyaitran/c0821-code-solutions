@@ -57,11 +57,7 @@ app.get('/api/grades', (req, res) => {
   db.query(sql)
     .then(result => {
       const grade = result.rows;
-      if (!grade) {
-        res.status(500).json({ error: 'Cannot find "grades" table' });
-      } else {
-        res.status(200).json(grade);
-      }
+      res.status(200).json(grade);
     })
     .catch(err => {
       console.error(err);
@@ -70,7 +66,7 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.post('/api/grades', (req, res) => {
-  if (!req.body) {
+  if (!req.body.content) {
     res.status(400).json({ error: 'content is a required field' });
     return;
   }
@@ -81,16 +77,12 @@ app.post('/api/grades', (req, res) => {
   const { name, course, score } = req.body;
   const sql = {
     text: 'insert into "grades"("name", "course", "score") values($1, $2, $3) returning *',
-    params: [name, course, score]
+    values: [name, course, score]
   };
   db.query(sql)
     .then(result => {
       const grade = result.rows[0];
-      if (!grade) {
-        res.status(400).json({ error: 'invalid grade' });
-      } else {
-        res.status(201).send(grade);
-      }
+      res.status(201).send(grade);
     })
     .catch(err => {
       console.error(err);
@@ -104,20 +96,20 @@ app.put('/api/grades/:gradeId', (req, res) => {
     res.status(400).json({ error: '"gradeId" must be a positive integer' });
     return;
   }
-  if (!req.body) {
+  if (!req.body.content) {
     res.status(400).json({ error: 'content is a required field' });
     return;
   }
   const { name, course, score } = req.body;
   const sql = {
     text: 'update "grades" set "name" = $1, "course" = $2, "score" = $3 where "gradeId" = $4 returning *',
-    params: [name, course, score, gradeId]
+    values: [name, course, score, gradeId]
   };
   db.query(sql)
     .then(result => {
       const grade = result.rows[0];
       if (!grade) {
-        res.status(400).json({ error: 'invalid grade' });
+        res.status(404).json({ error: 'invalid grade' });
       } else {
         res.status(200).send(grade);
       }
