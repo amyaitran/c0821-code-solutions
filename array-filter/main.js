@@ -18,4 +18,4 @@ const overFive = numbers.filter(number => number > 5);
 
 const startWithE = names.filter(name => name.startsWith('E'));
 
-const haveD = names.filter(name => name.includes('D'));
+const haveD = names.filter(name => name.includes('D') || name.includes('d'));
