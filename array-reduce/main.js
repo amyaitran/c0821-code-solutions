@@ -26,20 +26,15 @@ const product = numbers.reduce((prevValue, currValue) => (prevValue * currValue)
 console.log('product of numbers:', product);
 
 // balance
-const accountDeposits = account.filter(transaction => transaction.type === 'deposit');
-const accountWithdrawals = account.filter(transaction => transaction.type === 'withdrawal');
-
-const sumDeposits = accountDeposits.reduce(
-  (prevValue, currValue) => {
+const balance = account.reduce((prevValue, currValue) => {
+  if (currValue.type === 'deposit') {
     return prevValue + currValue.amount;
-  }, 0);
-const sumWithdrawals = accountWithdrawals.reduce(
-  (prevValue, currValue) => {
-    return prevValue + currValue.amount;
-  }, 0);
-
-const balance = sumDeposits - sumWithdrawals;
-console.log('balance of account:', balance);
+  } else if (currValue.type === 'withdrawal') {
+    return prevValue - currValue.amount;
+  }
+  return currValue;
+}, 0);
+console.log('balance:', balance);
 
 // composite
 const composite = traits.reduce((prevValue, currValue) => (Object.assign(currValue, prevValue)));
