@@ -17,25 +17,20 @@ const traits = [
   { trainer: 'ash' }
 ];
 
-// sum
 const sum = numbers.reduce((prevValue, currValue) => (prevValue + currValue));
 console.log('sum of numbers:', sum);
 
-// product
 const product = numbers.reduce((prevValue, currValue) => (prevValue * currValue));
 console.log('product of numbers:', product);
 
-// balance
 const balance = account.reduce((prevValue, currValue) => {
   if (currValue.type === 'deposit') {
     return prevValue + currValue.amount;
-  } else if (currValue.type === 'withdrawal') {
+  } else {
     return prevValue - currValue.amount;
   }
-  return currValue;
 }, 0);
 console.log('balance:', balance);
 
-// composite
 const composite = traits.reduce((prevValue, currValue) => (Object.assign(currValue, prevValue)));
 console.log('composite of traits:', composite);
