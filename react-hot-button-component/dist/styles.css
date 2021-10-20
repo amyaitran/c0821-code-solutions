@@ -1,0 +1,31 @@
+button {
+  color: white;
+  padding: 1rem;
+}
+
+.hot-button-3 {
+  background-color: rgb(53, 28, 117);
+}
+
+.hot-button-6 {
+  background-color: rgb(103, 78, 167);
+}
+
+.hot-button-9 {
+  background-color: rgb(224, 102, 102);
+}
+
+.hot-button-12 {
+  background-color: rgb(246, 178, 107);
+  color: black;
+}
+
+.hot-button-15 {
+  background-color: rgb(255, 255, 0);
+  color: black;
+}
+
+.hot-button-18 {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
