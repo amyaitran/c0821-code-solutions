@@ -16,10 +16,6 @@ class Accordion extends React.Component {
   }
 
   handleClick(e) {
-    this.setState({
-      openTopicId: null
-    });
-
     if (this.state.openTopicId !== e.target.id) {
       this.setState({
         openTopicId: e.target.id
