@@ -1,0 +1,18 @@
+body {
+  font-family: sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.header {
+  background-color: gainsboro;
+  border: solid black 2px;
+  font-size: 20pt;
+}
+
+.body {
+  font-size: 16pt;
+  border: solid black 2px;
+}
