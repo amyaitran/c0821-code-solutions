@@ -20,16 +20,14 @@ class Accordion extends React.Component {
       openTopicId: null
     });
 
-    for (let i = 0; i < data.length; i++) {
-      if (e.target.id === data[i].id && this.state.openTopicId !== e.target.id) {
-        this.setState({
-          openTopicId: data[i].id
-        });
-      } else if (e.target.id === data[i].id && this.state.openTopicId === e.target.id) {
-        this.setState({
-          openTopicId: null
-        });
-      }
+    if (this.state.openTopicId !== e.target.id) {
+      this.setState({
+        openTopicId: e.target.id
+      });
+    } else {
+      this.setState({
+        openTopicId: null
+      });
     }
   }
 
@@ -37,25 +35,18 @@ class Accordion extends React.Component {
     return (
       <div>
         {data.map(item => {
-          if (item.id === this.state.openTopicId) {
-            return (
+          return (
             <div key={item.id}>
               <div className="header" id={item.id} onClick={this.handleClick}>
                 {item.title}
               </div>
-              <div className="body">{item.content}</div>
+              {
+              (item.id === this.state.openTopicId
+                ? (<div className="body">{item.content}</div>)
+                : (<div className="body hidden">{item.content}</div>))
+            }
             </div>
-            );
-          } else {
-            return (
-            <div key={item.id}>
-              <div className="header" id={item.id} onClick={this.handleClick}>
-                {item.title}
-              </div>
-              <div className="body hidden">{item.content}</div>
-            </div>
-            );
-          }
+          );
         })
         }
       </div>
