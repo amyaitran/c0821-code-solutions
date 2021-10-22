@@ -1,0 +1,25 @@
+h1 {
+  font-size: 6rem;
+  font-family: sans-serif;
+}
+
+i {
+  font-size: 4rem;
+}
+
+.circle {
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  margin-bottom: 2rem;
+  border: solid black 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
