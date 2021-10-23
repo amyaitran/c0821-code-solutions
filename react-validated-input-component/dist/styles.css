@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+}
+
+i {
+  margin-left: 0.5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.pt-8 {
+  font-size: 8pt;
+}
