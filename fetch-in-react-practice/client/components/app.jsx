@@ -14,15 +14,30 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/todos')
+    fetch('/api/todos')
       .then(response => response.json())
       .then(data => {
         this.setState({ todos: data });
       });
   }
+  /**
+     * Use fetch to send a GET request to `/api/todos`.
+     * Then 😉, once the response JSON is received and parsed,
+     * update state with the received todos.
+     */
 
   addTodo(newTodo) {
-    /**
+    fetch('http://localhost:3000/api/todos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newTodo)
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ todos: this.state.todos.concat(data) });
+      });
+  }
+  /**
     * Use fetch to send a POST request to `/api/todos`.
     * Then 😉, once the response JSON is received and parsed,
     * add the created todo to the state array.
@@ -37,19 +52,32 @@ export default class App extends React.Component {
     * of the old array, plus the object returned by the server.
     *
     */
-    fetch('http://localhost:3000/api/todos', {
-      method: 'POST',
+
+  toggleCompleted(todoId) {
+    fetch(`http://localhost:3000/api/todos/${todoId}`, {
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newTodo)
+      body: JSON.stringify({ isCompleted: !this.state.todos[todoId - 1].isCompleted })
     })
       .then(response => response.json())
       .then(data => {
-        this.setState({ todos: this.state.todos.concat(data) });
+        this.setState(prevState => ({
+          todos: prevState.todos.map(
+            todo => {
+              if (todo.todoId === todoId) {
+                return { ...todo, isCompleted: !this.state.todos[todoId - 1].isCompleted };
+              } else {
+                return todo;
+              }
+            }
+          )
+        }));
+      })
+      .catch(error => {
+        console.error('Error:', error);
       });
   }
-
-  toggleCompleted(todoId) {
-    /**
+  /**
      * Applies a partial update to the todo object identified by its todoId in the URL.
      * The todoId of the target todo object should be in the request target,
      * while the isCompleted property of the todo should be in the request body.
@@ -72,81 +100,7 @@ export default class App extends React.Component {
      * And specify the "Content-Type" header as "application/json"
      */
 
-    // const todos = this.state.todos;
-    // let toggledTodo = null;
-    // for (let i = 0; i < todos.length; i++) {
-    //   if (todos[i].todoId === todoId) {
-    //     toggledTodo = todos[i];
-    //     toggledTodo.isCompleted = !todos[i].todoId.isCompleted;
-    //   }
-    // }
-
-    const todos = this.state.todos;
-    // const toggledTodoState = { isCompleted: null };
-    let toggledTodoState = null;
-    for (let i = 0; i < todos.length; i++) {
-      if (todos[i].todoId === todoId) {
-        toggledTodoState = !todos[i].isCompleted;
-      }
-    }
-    console.log('toggled state:', toggledTodoState);
-
-    // const toggledTodo = this.state.todos;
-    // for (let i = 0; i < toggledTodo.length; i++) {
-    //   if (toggledTodo[i].todoId === todoId) {
-    //     toggledTodo[i].isCompleted = !toggledTodo[i].isCompleted;
-    //   }
-    // }
-
-    // console.log('toggledtodo', toggledTodo);
-
-    // fetch(`http://localhost:3000/api/todos/${todoId}`, {
-    //   method: 'PATCH',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(todos)
-    // })
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     this.setState({
-    //       todos: todos.map(todo => {
-    //         if (todo.todoId === todoId) {
-    //           todo = {task, toggledTodoState;
-    //         }
-    //         return todo;
-    //       })
-    //     });
-    //     // this.setState({ todos: toggledTodo });
-    //   })
-    //   .catch(error => {
-    //     console.error('Error:', error);
-    //   });
-
-    //  WORKING W TOGGLEDSTATE (NO OBJECT)
-    fetch(`http://localhost:3000/api/todos/${todoId}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(todos)
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          todos: todos.map(todo => {
-            if (todo.todoId === todoId) {
-              todo.isCompleted = toggledTodoState;
-            }
-            return todo;
-          })
-        });
-        // this.setState({ todos: toggledTodo });
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-
-  }
-
   render() {
-    // console.log('this.state', this.state);
     return (
       <div className="container">
         <div className="row">
