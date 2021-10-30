@@ -54,10 +54,18 @@ export default class App extends React.Component {
     */
 
   toggleCompleted(todoId) {
+    const todos = this.state.todos;
+    const toggledStatus = { isCompleted: null };
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].todoId === todoId) {
+        toggledStatus.isCompleted = !todos[i].isCompleted;
+      }
+    }
+
     fetch(`http://localhost:3000/api/todos/${todoId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ isCompleted: !this.state.todos[todoId - 1].isCompleted })
+      body: JSON.stringify(toggledStatus)
     })
       .then(response => response.json())
       .then(data => {
@@ -65,7 +73,7 @@ export default class App extends React.Component {
           todos: prevState.todos.map(
             todo => {
               if (todo.todoId === todoId) {
-                return { ...todo, isCompleted: !this.state.todos[todoId - 1].isCompleted };
+                return data;
               } else {
                 return todo;
               }
